@@ -11,7 +11,7 @@ export default function AppLayout() {
     <div className="grid grid-rows-[auto_1fr_auto] h-screen">
       {isLoading && <Loader />}
       <Header />
-      <main className="container p-8 overflow-y-scroll">
+      <main className="container p-8 overflow-y-auto">
         <Outlet />
       </main>
       <CartOverview />
