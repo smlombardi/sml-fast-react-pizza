@@ -10,7 +10,7 @@ export default function Button({ children, disabled, to, type }) {
       "bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-400 focus:bg-yellow-300",
     secondary:
       base +
-      "bg-stone-400 hover:bg-stone-500 focus:ring-stone-400 focus:bg-stone-300",
+      "bg-stone-200 hover:bg-stone-500 focus:ring-stone-400 focus:bg-stone-300",
     small: base + "px-4 py-2 text-xs",
   };
 

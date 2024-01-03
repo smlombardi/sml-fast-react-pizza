@@ -42,30 +42,32 @@ function CreateOrder() {
 
   return (
     <div>
-      <h2>Ready to order? Lets go!</h2>
+      <h1 className="mb-8 text-xl font-semibold">Ready to order? Lets go!</h1>
 
       <Form method="POST">
-        <div>
+        <div className="mb-4">
           <label>First Name</label>
           <input type="text" name="customer" required className="input" />
         </div>
 
-        <div>
+        <div className="mb-4">
           <label>Phone number</label>
           <div>
             <input type="tel" name="phone" required className="input" />
           </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
+          {formErrors?.phone && (
+            <p className="mt-2 text-sm text-red-500">{formErrors.phone}</p>
+          )}
         </div>
 
-        <div>
+        <div className="mb-6">
           <label>Address</label>
           <div>
             <input type="text" name="address" required className="input" />
           </div>
         </div>
 
-        <div>
+        <div className="flex items-center gap-4 mb-12">
           <input
             className="w-6 h-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             type="checkbox"
@@ -79,7 +81,7 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <Button disabled={isSubmitting}>
+          <Button type="primary" disabled={isSubmitting}>
             {isSubmitting ? "Placing Order..." : "Order now"}
           </Button>
         </div>
