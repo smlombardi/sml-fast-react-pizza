@@ -12,6 +12,7 @@ export default function Button({ children, disabled, to, type, onClick }) {
       base +
       "bg-stone-200 hover:bg-stone-500 focus:ring-stone-400 focus:bg-stone-300",
     small: base + "px-4 py-2 text-xs",
+    round: base + "px-2 py-2 text-sm w-8 h-8 leading-none",
   };
 
   if (to) {
