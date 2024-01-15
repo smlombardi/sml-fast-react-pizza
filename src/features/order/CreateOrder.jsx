@@ -3,7 +3,8 @@ import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import EmptyCart from "../cart/EmptyCart";
 import { useSelector } from "react-redux";
-import { getCart } from "../cart/cartSlice";
+import { getCart, clearCart } from "../cart/cartSlice";
+import store from "../../store"; //HACK, see below
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -95,6 +96,9 @@ export async function action({ request }) {
   }
 
   const newOrder = await createOrder(order);
+
+  //HACK because you can't dispatch actions from outside of a component
+  store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
 }
